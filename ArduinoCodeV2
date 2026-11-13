@@ -1,19 +1,27 @@
 #include <Servo.h>
 
+//What servos we using
 Servo myservo1;
+
+//Copper Tapes
 const int buttonPin1 = 13;
 
 void setup() {
+  //Servo Pins
   myservo1.attach(11);
+
+  //Copper Tape Inputs
   pinMode(buttonPin1, INPUT);
+
+  //Resetting Servos
+  myservo1.write(0);
 
 }
 
 void loop() {
+
+  //Interaction 1 (Ryota sits down and reveals backpack via servo)
   if (digitalRead(buttonPin1) == HIGH){
     myservo1.write(90);
-  }else{
-    myservo1.write(0);
+    }
   }
-
-}
