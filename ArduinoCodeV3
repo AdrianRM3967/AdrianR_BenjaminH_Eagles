@@ -2,19 +2,24 @@
 
 //What servos we using
 Servo myservo1;
+Servo myservo2;
 
 //Copper Tapes
 const int buttonPin1 = 13;
+const int buttonPin2 = 12;
 
 void setup() {
   //Servo Pins
   myservo1.attach(11);
+  myservo2.attach(10);
 
   //Copper Tape Inputs
   pinMode(buttonPin1, INPUT);
+  pinMode(buttonPin2, INPUT);
 
   //Resetting Servos
   myservo1.write(0);
+  myservo2.write(90);
 
 }
 
@@ -23,5 +28,11 @@ void loop() {
   //Interaction 1 (Ryota sits down and reveals backpack via servo)
   if (digitalRead(buttonPin1) == HIGH){
     myservo1.write(90);
+    }
+  
+
+//Interaction 2 (Backpack reveals Sports Magazine)
+  if (digitalRead(buttonPin2) == HIGH){
+    myservo2.write(0);
     }
   }
